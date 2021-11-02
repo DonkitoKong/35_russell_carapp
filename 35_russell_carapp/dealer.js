@@ -104,7 +104,7 @@ var questions = [
 ];
 
 var qnsIndex = 0;
-var selection = [];
+var selections = [];
 var currentClient = null;
 
 function newClient(){
@@ -344,20 +344,18 @@ function next_qns() {
 	else{
 		qnsIndex = 0;
 		var totalScore = 0;
-		
-		for(var i=0;i<selection.length;i++){
+		for(var i=0;selections.length;i++){
 			var selections = selections[i];
-			var question = null;
-			
+			var question = null;	
 		for(var h=0;h<questions.length;h++){
 			var q = questions[h];	
-			if(q.no == selection.qnsNo) {
+			if(q.no == selections.qnsNo) {
 				question = q;
 				break;
 			}
 			
 		}
-			if(selection.selected == question.correctAns) {
+			if(selections.selected == question.correctAns) {
 				totalScore += parseInt(question.points);
 			}
 		}
