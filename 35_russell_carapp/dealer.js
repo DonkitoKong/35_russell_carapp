@@ -345,7 +345,7 @@ function next_qns() {
 		qnsIndex = 0;
 		var totalScore = 0;
 		
-		for(var i=0;i<selections.length;i++){
+		for(var i=0;i<selection.length;i++){
 			var selections = selections[i];
 			var question = null;
 			
@@ -473,5 +473,5 @@ function ansBox_click(selectedChoice) {
 		"selected":selectedChoice,
 		"qnsType":"mcq"
 	};
-	selection.push(selection);
+	selections.push(selection);
 }
