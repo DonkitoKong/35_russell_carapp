@@ -254,11 +254,11 @@ function showCashierDialog(dragClient) {
         cars_sold += 1;
         amount += calcost(dragClient);
         update();
-        removeBox(dragClient, -235);
+        removeBox(dragClient, "-=210");
         $(this).dialog("close");
       },
       "No and Exit": function () {
-        removeBox(dragClient, -250);
+        removeBox(dragClient, "-=210");
         $(this).dialog("close");
       }
     },
@@ -351,19 +351,19 @@ function next_qns() {
   } else {
     qnsIndex = 0;
     var totalScore = 0;
-
-    for (var i = 0; selections.length; i++) {
+    for (var i = 0; i < selections.length; i++) {
       var selection = selections[i];
       var question = null;
       for (var h = 0; h < questions.length; h++) {
         var q = questions[h];
-        if (q.no == selections.qnsNo) {
+        if (q.no == selection.qnsNo) {
+
           question = q;
           break;
         }
 
       }
-      if (selections.selected == question.correctAns) {
+      if (selection.selected == question.correctAns) {
         totalScore += parseInt(question.points);
       }
     }
